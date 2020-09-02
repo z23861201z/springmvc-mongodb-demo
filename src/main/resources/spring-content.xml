@@ -25,13 +25,6 @@
     <!-- Enable @Aspect, @Before, @After -->
     <aop:aspectj-autoproxy proxy-target-class="true" />
 
-
-    <!--mongodb配置-->
-    <mongo:mongo id="mongo" host="localhost" port="27017" />
-    <mongo:db-factory dbname="testPost" mongo-ref="mongo" />
-
-    <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
-        <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
-    </bean>
+    <import resource="classpath:spring-mongodb.xml"/>
 
 </beans>
